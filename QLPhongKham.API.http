@@ -1,0 +1,6 @@
+@QLPhongKham.API_HostAddress = http://localhost:5120
+
+GET {{QLPhongKham.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
