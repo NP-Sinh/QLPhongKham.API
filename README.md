@@ -1,1 +1,4 @@
 # QLPhongKham.API
+
+
+scaffold-DbContext "Name=ConnectionStrings:Connection" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models\Entities -Force -Context PhongKhamDBContext
