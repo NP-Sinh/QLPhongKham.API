@@ -64,7 +64,7 @@ namespace QLPhongKham.API.Services
                 {
                     ChuyenKhoa update = await _context.ChuyenKhoas.FindAsync(model.Id);
                     update.TenChuyenKhoa = model.TenChuyenKhoa;
-                    _context.ChuyenKhoas.Update(model);
+                    _context.ChuyenKhoas.Update(update);
                 }
                 await _context.SaveChangesAsync();
                 await _convertDBToJsonServices.convertChuyenKhoaToJson();

@@ -84,6 +84,7 @@ namespace QLPhongKham.API.Services
                 if (model.Id == 0)
                 {
                     model.MaBacSi = CommonService.LuuMaQL("BS","BacSi", _context);
+                    model.DangHoatDong = true;
                     await _context.BacSis.AddAsync(model);
                 }
                 else
@@ -97,7 +98,7 @@ namespace QLPhongKham.API.Services
                     update.BangCap = model.BangCap;
                     update.DangHoatDong = model.DangHoatDong;
 
-                    _context.BacSis.Update(model);
+                    _context.BacSis.Update(update);
                 }
                 await _context.SaveChangesAsync();
                 await _servicesJson.convertBacSiToJson();

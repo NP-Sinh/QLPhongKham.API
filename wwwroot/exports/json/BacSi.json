@@ -1,0 +1,24 @@
+[
+  {
+    "Id": 1,
+    "MaBacSi": "BS000001",
+    "IdNguoiDung": 1,
+    "HoTen": "Nguyen Van Bac Si",
+    "NgaySinh": "1980-11-11",
+    "GioiTinh": "Nam",
+    "SoDienThoai": "0123456789",
+    "IdChuyenKhoa": 1,
+    "BangCap": "Thạc sĩ y khoa",
+    "DangHoatDong": true,
+    "ChuyenKhoa": {
+      "Id": 1,
+      "MaChuyenKhoa": "CK000001",
+      "TenChuyenKhoa": "Nội khoa"
+    },
+    "NguoiDung": {
+      "Id": 1,
+      "MaNguoiDung": "ND000001",
+      "TenDangNhap": "NguoiDung1"
+    }
+  }
+]

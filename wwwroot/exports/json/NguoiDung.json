@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "maNguoiDung": "ND000001",
+    "tenDangNhap": "NguoiDung1",
+    "hoTen": "Nguyen Van Bac Si",
+    "soDienThoai": "0123456789",
+    "email": "bacsi1@gmail.com",
+    "VaiTro": {
+      "id": 1,
+      "maVaiTro": "VT001",
+      "tenVaiTro": "Bác sĩ"
+    },
+    "dangHoatDong": true
+  }
+]
