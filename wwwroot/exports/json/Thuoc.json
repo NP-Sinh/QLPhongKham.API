@@ -1,0 +1,12 @@
+[
+  {
+    "Id": 1,
+    "MaThuoc": "TH000001",
+    "TenThuoc": "Paracetamol 500mg",
+    "HoatChat": "Paracetamol",
+    "DonVi": "Viên",
+    "DonGia": 500000.00,
+    "SoLuongTon": 100,
+    "DangHoatDong": true
+  }
+]

@@ -1,0 +1,39 @@
+[
+  {
+    "Id": 1,
+    "MaLichHen": "LH000001",
+    "NgayGioHen": "2025-12-12T00:00:00",
+    "TrangThai": "Đã đặt",
+    "TrieuChung": "Không có",
+    "GhiChu": "Test1",
+    "NgayTao": "2025-11-14T01:25:45.49",
+    "BenhNhan": {
+      "Id": 1,
+      "MaBenhNhan": "BN000001",
+      "HoTen": "Nguyễn Văn A",
+      "NgaySinh": "1990-05-15",
+      "GioiTinh": "Nam",
+      "SoDienThoai": "0901234567",
+      "DiaChi": "123 Đường ABC, Quận 1, TP.HCM",
+      "CMND": "123456789",
+      "NhomMau": "O",
+      "DiUng": "Không",
+      "NgayTao": "2025-11-13T16:15:35.757"
+    },
+    "BacSi": {
+      "Id": 1,
+      "MaBacSi": "BS000001",
+      "HoTen": "Nguyen Van Bac Si",
+      "NgaySinh": "1980-11-11",
+      "GioiTinh": "Nam",
+      "ChuyenKhoa": "Nội khoa"
+    },
+    "Phong": {
+      "Id": 1,
+      "MaPhong": "PK000001",
+      "TenPhong": "Phòng khám 1",
+      "LoaiPhong": "Khám bệnh",
+      "Tang": 1
+    }
+  }
+]
