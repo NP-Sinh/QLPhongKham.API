@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using QLPhongKham.API.Models.Entities;
 
 namespace QLPhongKham.API.Models.Map
 {
@@ -6,6 +7,9 @@ namespace QLPhongKham.API.Models.Map
     {
         public AutoMapperProfile()
         {
+            CreateMap<VaiTro, VaiTroMap>().ReverseMap();
+
+            CreateMap<BenhNhan, BenhNhanMap>().ReverseMap();
         }
     }
 }

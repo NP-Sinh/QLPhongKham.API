@@ -3,6 +3,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using QLPhongKham.API.Models.Entities;
 using QLPhongKham.API.Models.Map;
+using QLPhongKham.API.Services;
+using QLPhongKham.API.Services.ConvertDBToJsonServices;
 using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -28,6 +30,9 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 
 
 // Add services to the container.
+builder.Services.AddScoped<IConvertDBToJsonServices, ConvertDBToJsonServices>();
+builder.Services.AddScoped<IVaiTroServices, VaiTroServices>();
+builder.Services.AddScoped<IBenhNhanServices, BenhNhanServices>();
 
 builder.Services.AddControllers();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi

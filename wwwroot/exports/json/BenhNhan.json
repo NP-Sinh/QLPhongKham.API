@@ -1,0 +1,15 @@
+[
+  {
+    "id": 1,
+    "maBenhNhan": "BN000001",
+    "hoTen": "Nguyễn Văn A",
+    "ngaySinh": "1990-05-15",
+    "gioiTinh": "Nam",
+    "soDienThoai": "0901234567",
+    "diaChi": "123 Đường ABC, Quận 1, TP.HCM",
+    "cmnd": "123456789",
+    "nhomMau": "O",
+    "diUng": "Không",
+    "ngayTao": "2025-11-13T16:15:35.757"
+  }
+]
