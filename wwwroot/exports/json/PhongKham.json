@@ -1,0 +1,9 @@
+[
+  {
+    "Id": 1,
+    "MaPhong": "PK000001",
+    "TenPhong": "Phòng khám 1",
+    "LoaiPhong": "Khám bệnh",
+    "Tang": 1
+  }
+]
