@@ -1,0 +1,27 @@
+[
+  {
+    "id": 1,
+    "maChuyenKhoa": "CK000001",
+    "tenChuyenKhoa": "Nội khoa"
+  },
+  {
+    "id": 2,
+    "maChuyenKhoa": "CK000002",
+    "tenChuyenKhoa": "Ngoại khoa"
+  },
+  {
+    "id": 3,
+    "maChuyenKhoa": "CK000003",
+    "tenChuyenKhoa": "Tim mạch"
+  },
+  {
+    "id": 4,
+    "maChuyenKhoa": "CK000004",
+    "tenChuyenKhoa": "Nhi khoa"
+  },
+  {
+    "id": 5,
+    "maChuyenKhoa": "CK000005",
+    "tenChuyenKhoa": "Da liễu"
+  }
+]

@@ -8,8 +8,8 @@ namespace QLPhongKham.API.Models.Map
         public AutoMapperProfile()
         {
             CreateMap<VaiTro, VaiTroMap>().ReverseMap();
-
             CreateMap<BenhNhan, BenhNhanMap>().ReverseMap();
+            CreateMap<ChuyenKhoa, ChuyenKhoaMap>().ReverseMap();
         }
     }
 }

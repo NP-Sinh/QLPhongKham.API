@@ -9,6 +9,7 @@ namespace QLPhongKham.API.Services.ConvertDBToJsonServices
         Task convertVaiTroToJson();
         Task convertNguoiDungToJson();
         Task convertBenhNhanToJson();
+        Task convertChuyenKhoaToJson();
         Task convertAllDBToJson();
     }
     public class ConvertDBToJsonServices : IConvertDBToJsonServices
@@ -113,6 +114,20 @@ namespace QLPhongKham.API.Services.ConvertDBToJsonServices
                 .ToListAsync();
 
             await SaveToJsonFile(data, "BenhNhan.json");
+        }
+        public async Task convertChuyenKhoaToJson()
+        {
+            var data = await _context.ChuyenKhoas
+                .Select(x => new
+                {
+                    id = x.Id,
+                    maChuyenKhoa = x.MaChuyenKhoa,
+                    tenChuyenKhoa = x.TenChuyenKhoa,
+                })
+                .OrderBy(x => x.id)
+                .ToListAsync();
+
+            await SaveToJsonFile(data, "ChuyenKhoa.json");
         }
     }
 }
