@@ -10,6 +10,7 @@ namespace QLPhongKham.API.Services.ConvertDBToJsonServices
         Task convertNguoiDungToJson();
         Task convertBenhNhanToJson();
         Task convertChuyenKhoaToJson();
+        Task convertBacSiToJson();
         Task convertAllDBToJson();
     }
     public class ConvertDBToJsonServices : IConvertDBToJsonServices
@@ -128,6 +129,40 @@ namespace QLPhongKham.API.Services.ConvertDBToJsonServices
                 .ToListAsync();
 
             await SaveToJsonFile(data, "ChuyenKhoa.json");
+        }
+
+        public async Task convertBacSiToJson()
+        {
+            var data = await _context.BacSis
+                 .Select(bs => new
+                 {
+                     Id = bs.Id,
+                     MaBacSi = bs.MaBacSi,
+                     IdNguoiDung = bs.IdNguoiDung,
+                     HoTen = bs.HoTen,
+                     NgaySinh = bs.NgaySinh,
+                     GioiTinh = bs.GioiTinh,
+                     SoDienThoai = bs.SoDienThoai,
+                     IdChuyenKhoa = bs.IdChuyenKhoa,
+                     BangCap = bs.BangCap,
+                     DangHoatDong = bs.DangHoatDong,
+                     ChuyenKhoa = bs.IdChuyenKhoaNavigation != null ? new
+                     {
+                         Id = bs.IdChuyenKhoaNavigation.Id,
+                         MaChuyenKhoa = bs.IdChuyenKhoaNavigation.MaChuyenKhoa,
+                         TenChuyenKhoa = bs.IdChuyenKhoaNavigation.TenChuyenKhoa,
+                     } : null,
+                     NguoiDung = bs.IdNguoiDungNavigation != null ? new
+                     {
+                         Id = bs.IdNguoiDungNavigation.Id,
+                         MaNguoiDung = bs.IdNguoiDungNavigation.MaNguoiDung,
+                         TenDangNhap = bs.IdNguoiDungNavigation.TenDangNhap,
+                     } : null
+                 })
+                .OrderBy(x => x.Id)
+                .ToListAsync();
+
+            await SaveToJsonFile(data, "BacSi.json");
         }
     }
 }
