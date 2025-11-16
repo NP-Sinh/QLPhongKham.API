@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Microsoft.EntityFrameworkCore;
+using QLPhongKham.API.Controllers;
 using QLPhongKham.API.Models.Entities;
 using QLPhongKham.API.Models.Map;
 using QLPhongKham.API.Services.ConvertDBToJsonServices;
@@ -140,21 +141,16 @@ namespace QLPhongKham.API.Services
         {
             try
             {
-                var master = await _context.DonThuocs.FindAsync(id);
-                var details = await _context.ChiTietDonThuocs
-                    .Where(c => c.IdDonThuoc == master.Id)
-                    .ToListAsync();
+                var donThuoc = await _context.DonThuocs
+                    .Include(x => x.ChiTietDonThuocs)
+                    .FirstOrDefaultAsync(x => x.Id == id);
 
-                if (details.Count > 1)
+                if (donThuoc.ChiTietDonThuocs.Any())
                 {
-                    _context.ChiTietDonThuocs.RemoveRange(details);
-                }
-                else if (details.Count == 1)
-                {
-                    _context.ChiTietDonThuocs.Remove(details.First());
+                    _context.ChiTietDonThuocs.RemoveRange(donThuoc.ChiTietDonThuocs);
                 }
 
-                _context.DonThuocs.Remove(master);
+                _context.DonThuocs.Remove(donThuoc);
 
                 await _context.SaveChangesAsync();
 
