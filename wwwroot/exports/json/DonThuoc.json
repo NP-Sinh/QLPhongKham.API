@@ -1,6 +1,6 @@
 [
   {
-    "id": 14,
+    "id": 15,
     "maDonThuoc": "DT000001",
     "idPhieuKham": 1,
     "idBenhNhan": 1,
@@ -10,9 +10,9 @@
     "ghiChu": "Uống sau ăn",
     "ChiTietDonThuocs": [
       {
-        "id": 13,
+        "id": 15,
         "maChiTiet": "CTDT000001",
-        "idDonThuoc": 14,
+        "idDonThuoc": 15,
         "idThuoc": 1,
         "soLuong": 2,
         "lieuLuong": "1 viên/lần",

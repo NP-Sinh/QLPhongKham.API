@@ -138,41 +138,34 @@ namespace QLPhongKham.API.Services
         }
         public async Task<dynamic> deleteDonThuoc(int id)
         {
-            var tran = _context.Database.BeginTransaction();
             try
             {
-                var donThuoc = await _context.DonThuocs
-                    .Include(x => x.ChiTietDonThuocs)
-                    .FirstOrDefaultAsync(x => x.Id == id);
+                var master = await _context.DonThuocs.FindAsync(id);
+                var details = await _context.ChiTietDonThuocs
+                    .Where(c => c.IdDonThuoc == master.Id)
+                    .ToListAsync();
 
-                if (donThuoc == null)
+                if (details.Count > 1)
                 {
-                    return new
-                    {
-                        statusCode = 404,
-                        message = "Không tìm thấy đơn thuốc"
-                    };
+                    _context.ChiTietDonThuocs.RemoveRange(details);
+                }
+                else if (details.Count == 1)
+                {
+                    _context.ChiTietDonThuocs.Remove(details.First());
                 }
 
-                if (donThuoc.ChiTietDonThuocs.Any())
-                {
-                    _context.ChiTietDonThuocs.RemoveRange(donThuoc.ChiTietDonThuocs);
-                }
-
-                _context.DonThuocs.Remove(donThuoc);
+                _context.DonThuocs.Remove(master);
 
                 await _context.SaveChangesAsync();
-                tran.Commit();
 
                 return new
                 {
                     statusCode = 200,
-                    message = "Xóa đơn thuốc thành công",
+                    message = "Thành công",
                 };
             }
             catch (Exception e)
             {
-                tran.Rollback();
                 return new
                 {
                     statusCode = 500,
@@ -181,38 +174,23 @@ namespace QLPhongKham.API.Services
                 };
             }
         }
-
         public async Task<dynamic> deleteCTDonThuoc(int id)
         {
-            var tran = _context.Database.BeginTransaction();
             try
             {
-                var chiTiet = await _context.ChiTietDonThuocs.FindAsync(id);
+                var detail = await _context.ChiTietDonThuocs.FindAsync(id);
 
-                if (chiTiet == null)
-                {
-                    return new
-                    {
-                        statusCode = 404,
-                        message = "Không tìm thấy chi tiết đơn thuốc"
-                    };
-                }
-                var idDonThuoc = chiTiet.IdDonThuoc;
-                var maChiTiet = chiTiet.MaChiTiet;
-
-                _context.ChiTietDonThuocs.Remove(chiTiet);
+                _context.ChiTietDonThuocs.Remove(detail);
                 await _context.SaveChangesAsync();
-                tran.Commit();
 
                 return new
                 {
                     statusCode = 200,
-                    message = "Xóa chi tiết đơn thuốc thành công",
+                    message = "Thành công",
                 };
             }
             catch (Exception e)
             {
-                tran.Rollback();
                 return new
                 {
                     statusCode = 500,
@@ -221,5 +199,6 @@ namespace QLPhongKham.API.Services
                 };
             }
         }
+
     }
 }
