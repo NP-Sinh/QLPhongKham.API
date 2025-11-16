@@ -1,0 +1,24 @@
+[
+  {
+    "id": 14,
+    "maDonThuoc": "DT000001",
+    "idPhieuKham": 1,
+    "idBenhNhan": 1,
+    "idBacSi": 1,
+    "ngayKeDon": "2024-11-17T00:00:00",
+    "trangThai": "Chờ xử lý",
+    "ghiChu": "Uống sau ăn",
+    "ChiTietDonThuocs": [
+      {
+        "id": 13,
+        "maChiTiet": "CTDT000001",
+        "idDonThuoc": 14,
+        "idThuoc": 1,
+        "soLuong": 2,
+        "lieuLuong": "1 viên/lần",
+        "cachDung": "Uống với nước",
+        "soNgayDung": 7
+      }
+    ]
+  }
+]

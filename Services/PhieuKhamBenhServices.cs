@@ -54,6 +54,7 @@ namespace QLPhongKham.API.Services
         public async Task<dynamic> getPhieuKhamId(int id)
         {
             var query = await _context.PhieuKhamBenhs
+                .Where(x => x.Id == id)
                 .Select(x => new
                 {
                     id = x.Id,
@@ -106,7 +107,7 @@ namespace QLPhongKham.API.Services
                     } : null,
 
                 })
-                .ToListAsync();
+                .FirstOrDefaultAsync();
             return query;
         }
 

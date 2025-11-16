@@ -17,11 +17,11 @@ namespace QLPhongKham.API.Services
         private readonly PhongKhamDBContext _context;
         private readonly IMapper _mapper;
         private IConvertDBToJsonServices _servicesJson;
-        public BacSiServices(PhongKhamDBContext context, IMapper mapper, IConvertDBToJsonServices services)
+        public BacSiServices(PhongKhamDBContext context, IMapper mapper, IConvertDBToJsonServices servicesJson)
         {
             _context = context;
             _mapper = mapper;
-            _servicesJson = services;
+            _servicesJson = servicesJson;
         }
         public async Task<dynamic> getBacSi()
         {

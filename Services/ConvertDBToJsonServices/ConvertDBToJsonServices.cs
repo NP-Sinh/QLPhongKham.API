@@ -16,6 +16,7 @@ namespace QLPhongKham.API.Services.ConvertDBToJsonServices
         Task convertThuocToJson();
         Task convertLichHenToJson();
         Task convertPhieKhamBenhToJson();
+        Task convertDonThuocToJson();
         Task convertAllDBToJson();
     }
     public class ConvertDBToJsonServices : IConvertDBToJsonServices
@@ -316,6 +317,36 @@ namespace QLPhongKham.API.Services.ConvertDBToJsonServices
                 .OrderBy(x => x.id)
                 .ToListAsync();
             await SaveToJsonFile(data, "PhieuKhamBenh.json");
+        }
+
+        public async Task convertDonThuocToJson()
+        {
+            var data = await _context.DonThuocs
+              .Select(x => new
+              {
+                  id = x.Id,
+                  maDonThuoc = x.MaDonThuoc,
+                  idPhieuKham = x.IdPhieuKham,
+                  idBenhNhan = x.IdBenhNhan,
+                  idBacSi = x.IdBacSi,
+                  ngayKeDon = x.NgayKeDon,
+                  trangThai = x.TrangThai,
+                  ghiChu = x.GhiChu,
+                  ChiTietDonThuocs = x.ChiTietDonThuocs.Select(ct => new
+                  {
+                      id = ct.Id,
+                      maChiTiet = ct.MaChiTiet,
+                      idDonThuoc = ct.IdDonThuoc,
+                      idThuoc = ct.IdThuoc,
+                      soLuong = ct.SoLuong,
+                      lieuLuong = ct.LieuLuong,
+                      cachDung = ct.CachDung,
+                      soNgayDung = ct.SoNgayDung
+                  })
+              })
+              .OrderBy(x => x.id)
+              .ToListAsync();
+            await SaveToJsonFile(data, "DonThuoc.json");
         }
     }
 }

@@ -13,6 +13,12 @@ builder.Services.AddAutoMapper(typeof(AutoMapperProfile));
 builder.Services.AddDbContext<PhongKhamDBContext>(c =>
         c.UseSqlServer(builder.Configuration.GetConnectionString("Connection")));
 
+// Newtonsoft.Json config
+builder.Services.AddControllersWithViews()
+    .AddNewtonsoftJson(options =>
+    options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
+);
+
 // Memory Cache
 builder.Services.AddMemoryCache(options =>
 {
@@ -48,6 +54,7 @@ builder.Services.AddScoped<IPhongKhamServices, PhongKhamServices>();
 builder.Services.AddScoped<IThuocServices, ThuocServices>();
 builder.Services.AddScoped<ILichHenServices, LichHenServices>();
 builder.Services.AddScoped<IPhhieuKhamBenhServices, PhieuKhamBenhServices>();
+builder.Services.AddScoped<IDonThuocServices, DonThuocServices>();
 
 builder.Services.AddControllers();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
