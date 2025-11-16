@@ -5,6 +5,7 @@ using QLPhongKham.API.Models.Entities;
 using QLPhongKham.API.Models.Map;
 using QLPhongKham.API.Services;
 using QLPhongKham.API.Services.ConvertDBToJsonServices;
+using QLPhongKham.API.Services.MemoryCaching;
 using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -12,6 +13,13 @@ builder.Services.AddAutoMapper(typeof(AutoMapperProfile));
 builder.Services.AddDbContext<PhongKhamDBContext>(c =>
         c.UseSqlServer(builder.Configuration.GetConnectionString("Connection")));
 
+// Memory Cache
+builder.Services.AddMemoryCache(options =>
+{
+    options.SizeLimit = 1024; 
+    options.CompactionPercentage = 0.25; 
+    options.ExpirationScanFrequency = TimeSpan.FromMinutes(5);
+});
 // JWT config
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options =>
@@ -46,6 +54,10 @@ builder.Services.AddControllers();
 builder.Services.AddOpenApi();
 builder.Services.AddAuthorization();
 
+builder.Services.AddMemoryCache();
+builder.Services.AddScoped<IMemoryCaching, MemoryCaching>();
+builder.Services.AddResponseCaching();
+
 // CORS cho Angular
 builder.Services.AddCors(options =>
 {
@@ -55,7 +67,10 @@ builder.Services.AddCors(options =>
             .AllowAnyHeader()
             .AllowAnyMethod());
 });
+
 var app = builder.Build();
+
+app.UseResponseCaching();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

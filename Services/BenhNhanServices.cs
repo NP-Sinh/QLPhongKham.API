@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using QLPhongKham.API.Models.Entities;
 using QLPhongKham.API.Models.Map;
 using QLPhongKham.API.Services.ConvertDBToJsonServices;
+using QLPhongKham.API.Services.MemoryCaching;
 
 namespace QLPhongKham.API.Services
 {
@@ -17,11 +18,13 @@ namespace QLPhongKham.API.Services
         private readonly PhongKhamDBContext _context;
         private readonly IMapper _mapper;
         private IConvertDBToJsonServices _servicesJson;
-        public BenhNhanServices(PhongKhamDBContext context, IMapper mapper, IConvertDBToJsonServices services)
+        private readonly IMemoryCaching _cache;
+        public BenhNhanServices(PhongKhamDBContext context, IMapper mapper, IConvertDBToJsonServices services, IMemoryCaching cache)
         {
             _context = context;
             _mapper = mapper;
             _servicesJson = services;
+            _cache = cache;
         }
         public async Task<dynamic> getBenhNhan()
         {
