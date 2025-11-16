@@ -30,7 +30,7 @@ namespace QLPhongKham.API.Controllers
             return Ok(result);
         }
         [HttpPost("modify")]
-        public async Task<IActionResult> Modify(PhieuKhamBenhMap phieuKhamBenhMap)
+        public async Task<IActionResult> Modify([FromBody] PhieuKhamBenhMap phieuKhamBenhMap)
         {
             var result = await _services.modify(phieuKhamBenhMap);
             return Ok(result);
