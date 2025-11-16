@@ -39,6 +39,7 @@ builder.Services.AddScoped<INguoiDungServices, NguoiDungServices>();
 builder.Services.AddScoped<IPhongKhamServices, PhongKhamServices>();
 builder.Services.AddScoped<IThuocServices, ThuocServices>();
 builder.Services.AddScoped<ILichHenServices, LichHenServices>();
+builder.Services.AddScoped<IPhhieuKhamBenhServices, PhieuKhamBenhServices>();
 
 builder.Services.AddControllers();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi

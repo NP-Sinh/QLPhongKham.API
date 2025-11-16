@@ -8,5 +8,35 @@
     "id": 2,
     "maVaiTro": "VT002",
     "tenVaiTro": "Y tá"
+  },
+  {
+    "id": 3,
+    "maVaiTro": "VT003",
+    "tenVaiTro": "Admin"
+  },
+  {
+    "id": 4,
+    "maVaiTro": "VT004",
+    "tenVaiTro": "Lễ tân"
+  },
+  {
+    "id": 5,
+    "maVaiTro": "VT005",
+    "tenVaiTro": "Thu ngân"
+  },
+  {
+    "id": 6,
+    "maVaiTro": "VT006",
+    "tenVaiTro": "Quản lý phòng khám"
+  },
+  {
+    "id": 7,
+    "maVaiTro": "VT007",
+    "tenVaiTro": "Nhân viên kỹ thuật"
+  },
+  {
+    "id": 8,
+    "maVaiTro": "VT008",
+    "tenVaiTro": "Test a"
   }
 ]

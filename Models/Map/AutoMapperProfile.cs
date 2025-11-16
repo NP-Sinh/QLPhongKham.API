@@ -15,6 +15,7 @@ namespace QLPhongKham.API.Models.Map
             CreateMap<PhongKham, PhongKhamMap>().ReverseMap();
             CreateMap<Thuoc, ThuocMap>().ReverseMap();
             CreateMap<LichHen, LichHenMap>().ReverseMap();
+            CreateMap<PhieuKhamBenh, PhieuKhamBenhMap>().ReverseMap();
         }
     }
 }

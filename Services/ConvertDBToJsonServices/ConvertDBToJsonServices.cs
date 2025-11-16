@@ -15,6 +15,7 @@ namespace QLPhongKham.API.Services.ConvertDBToJsonServices
         Task convertPhongKhamToJson();
         Task convertThuocToJson();
         Task convertLichHenToJson();
+        Task convertPhieKhamBenhToJson();
         Task convertAllDBToJson();
     }
     public class ConvertDBToJsonServices : IConvertDBToJsonServices
@@ -255,6 +256,66 @@ namespace QLPhongKham.API.Services.ConvertDBToJsonServices
                 .OrderBy(x => x.Id)
                 .ToListAsync();
             await SaveToJsonFile(data, "LichHen.json");
+        }
+
+        public async Task convertPhieKhamBenhToJson()
+        {
+            var data = await _context.PhieuKhamBenhs
+                .Select(x => new
+                {
+                    id = x.Id,
+                    maPhieuKham = x.MaPhieuKham,
+                    ngayKham = x.NgayKham,
+                    trieuChung = x.TrieuChung,
+                    canNang = x.CanNang,
+                    chieuCao = x.ChieuCao,
+                    nhietDo = x.NhietDo,
+                    huyetAp = x.HuyetAp,
+                    nhipTim = x.NhipTim,
+                    chanDoan = x.ChanDoan,
+                    dieuTri = x.DieuTri,
+                    loiDan = x.LoiDan,
+                    ngayTaiKham = x.NgayTaiKham,
+                    trangThai = x.TrangThai,
+                    ghiChu = x.GhiChu,
+                    benhNhan = x.IdBenhNhanNavigation != null ? new
+                    {
+                        id = x.IdBenhNhanNavigation.Id,
+                        maBenhNhan = x.IdBenhNhanNavigation.MaBenhNhan,
+                        hoTen = x.IdBenhNhanNavigation.HoTen,
+                        ngaySinh = x.IdBenhNhanNavigation.NgaySinh,
+                        gioiTinh = x.IdBenhNhanNavigation.GioiTinh,
+                        soDienThoai = x.IdBenhNhanNavigation.SoDienThoai,
+                        diaChi = x.IdBenhNhanNavigation.DiaChi,
+                        cmnd = x.IdBenhNhanNavigation.Cmnd,
+                        nhomMau = x.IdBenhNhanNavigation.NhomMau,
+                        diUng = x.IdBenhNhanNavigation.DiUng
+
+                    } : null,
+                    lichHen = x.IdLichHenNavigation != null ? new
+                    {
+                        id = x.IdLichHenNavigation.Id,
+                        maLichHen = x.IdLichHenNavigation.MaLichHen,
+                        idPhong = x.IdLichHenNavigation.IdPhong,
+                        maPhong = x.IdLichHenNavigation.IdPhongNavigation.MaPhong,
+                        ngayGioHen = x.IdLichHenNavigation.NgayGioHen,
+                        trieuChung = x.IdLichHenNavigation.TrieuChung,
+                    } : null,
+                    bacSi = x.IdBacSiNavigation != null ? new
+                    {
+                        id = x.IdBacSiNavigation.Id,
+                        maBacSi = x.IdBacSiNavigation.MaBacSi,
+                        hoTen = x.IdBacSiNavigation.HoTen,
+                        ngaySinh = x.IdBacSiNavigation.NgaySinh,
+                        gioiTinh = x.IdBacSiNavigation.GioiTinh,
+                        idChuyenKhoa = x.IdBacSiNavigation.IdChuyenKhoa,
+                        maChuyenKhoa = x.IdBacSiNavigation.IdChuyenKhoaNavigation.MaChuyenKhoa
+                    } : null,
+
+                })
+                .OrderBy(x => x.id)
+                .ToListAsync();
+            await SaveToJsonFile(data, "PhieuKhamBenh.json");
         }
     }
 }
