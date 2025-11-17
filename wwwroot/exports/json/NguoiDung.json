@@ -63,9 +63,23 @@
     "soDienThoai": "123",
     "email": "test4",
     "VaiTro": {
-      "id": 7,
-      "maVaiTro": "VT007",
-      "tenVaiTro": "Nhân viên kỹ thuật"
+      "id": 2,
+      "maVaiTro": "VT002",
+      "tenVaiTro": "Y tá"
+    },
+    "dangHoatDong": false
+  },
+  {
+    "id": 6,
+    "maNguoiDung": "ND000006",
+    "tenDangNhap": "test5",
+    "hoTen": "test5",
+    "soDienThoai": "123",
+    "email": "test5",
+    "VaiTro": {
+      "id": 8,
+      "maVaiTro": "VT008",
+      "tenVaiTro": "Test a"
     },
     "dangHoatDong": true
   }

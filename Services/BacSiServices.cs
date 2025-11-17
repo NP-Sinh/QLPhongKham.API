@@ -30,21 +30,21 @@ namespace QLPhongKham.API.Services
                 {
                     Id = bs.Id,
                     MaBacSi = bs.MaBacSi,
-                    IdNguoiDung = bs.IdNguoiDung,
                     HoTen = bs.HoTen,
                     NgaySinh = bs.NgaySinh,
                     GioiTinh = bs.GioiTinh,
                     SoDienThoai = bs.SoDienThoai,
-                    IdChuyenKhoa = bs.IdChuyenKhoa,
                     BangCap = bs.BangCap,
                     DangHoatDong = bs.DangHoatDong,
                     ChuyenKhoa = bs.IdChuyenKhoaNavigation != null ? new
                     {
+                        IdChuyenKhoa = bs.IdChuyenKhoa,
                         MaChuyenKhoa = bs.IdChuyenKhoaNavigation.MaChuyenKhoa,
                         TenChuyenKhoa = bs.IdChuyenKhoaNavigation.TenChuyenKhoa,
                     } : null,
                     NguoiDung = bs.IdNguoiDungNavigation != null ? new
                     {
+                        IdChuyenKhoa = bs.IdChuyenKhoa,
                         MaNguoiDung = bs.IdNguoiDungNavigation.MaNguoiDung,
                         TenDangNhap = bs.IdNguoiDungNavigation.TenDangNhap,
                     } : null
