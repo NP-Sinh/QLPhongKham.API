@@ -36,7 +36,11 @@ namespace QLPhongKham.API.Services
                    SoDienThoai = x.SoDienThoai,
                    Email = x.Email,
                    IdVaiTro = x.IdVaiTro,
-                   TenVaiTro = x.IdVaiTroNavigation.TenVaiTro,
+                   VaiTro = x.IdVaiTroNavigation != null ? new
+                   {
+                       MaVaiTro = x.IdVaiTroNavigation.MaVaiTro,
+                       TenVaiTro = x.IdVaiTroNavigation.TenVaiTro,
+                   } : null,
                    DangHoatDong = x.DangHoatDong,
                    NgayTao = x.NgayTao
 

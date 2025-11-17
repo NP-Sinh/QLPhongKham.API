@@ -29,13 +29,13 @@
     "NgaySinh": "1999-12-31",
     "GioiTinh": "Nam",
     "SoDienThoai": "123",
-    "IdChuyenKhoa": 2,
+    "IdChuyenKhoa": 1,
     "BangCap": "test1",
-    "DangHoatDong": true,
+    "DangHoatDong": false,
     "ChuyenKhoa": {
-      "Id": 2,
-      "MaChuyenKhoa": "CK000002",
-      "TenChuyenKhoa": "Ngoại khoa"
+      "Id": 1,
+      "MaChuyenKhoa": "CK000001",
+      "TenChuyenKhoa": "Nội khoa"
     },
     "NguoiDung": {
       "Id": 2,
