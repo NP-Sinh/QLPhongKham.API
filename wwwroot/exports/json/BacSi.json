@@ -20,5 +20,27 @@
       "MaNguoiDung": "ND000001",
       "TenDangNhap": "NguoiDung1"
     }
+  },
+  {
+    "Id": 2,
+    "MaBacSi": "BS000002",
+    "IdNguoiDung": 2,
+    "HoTen": "test1",
+    "NgaySinh": "1999-12-31",
+    "GioiTinh": "Nam",
+    "SoDienThoai": "123",
+    "IdChuyenKhoa": 2,
+    "BangCap": "test1",
+    "DangHoatDong": true,
+    "ChuyenKhoa": {
+      "Id": 2,
+      "MaChuyenKhoa": "CK000002",
+      "TenChuyenKhoa": "Ngoại khoa"
+    },
+    "NguoiDung": {
+      "Id": 2,
+      "MaNguoiDung": "ND000002",
+      "TenDangNhap": "te"
+    }
   }
 ]

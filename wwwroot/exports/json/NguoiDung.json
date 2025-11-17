@@ -12,5 +12,61 @@
       "tenVaiTro": "Bác sĩ"
     },
     "dangHoatDong": true
+  },
+  {
+    "id": 2,
+    "maNguoiDung": "ND000002",
+    "tenDangNhap": "te",
+    "hoTen": "test1",
+    "soDienThoai": "1123123",
+    "email": "te",
+    "VaiTro": {
+      "id": 1,
+      "maVaiTro": "VT001",
+      "tenVaiTro": "Bác sĩ"
+    },
+    "dangHoatDong": false
+  },
+  {
+    "id": 3,
+    "maNguoiDung": "ND000003",
+    "tenDangNhap": "aa",
+    "hoTen": "test2",
+    "soDienThoai": "12312321312",
+    "email": "aaa",
+    "VaiTro": {
+      "id": 8,
+      "maVaiTro": "VT008",
+      "tenVaiTro": "Test a"
+    },
+    "dangHoatDong": false
+  },
+  {
+    "id": 4,
+    "maNguoiDung": "ND000004",
+    "tenDangNhap": "test3",
+    "hoTen": "test3",
+    "soDienThoai": "test3",
+    "email": "",
+    "VaiTro": {
+      "id": 4,
+      "maVaiTro": "VT004",
+      "tenVaiTro": "Lễ tân"
+    },
+    "dangHoatDong": false
+  },
+  {
+    "id": 5,
+    "maNguoiDung": "ND000005",
+    "tenDangNhap": "Test4",
+    "hoTen": "test4",
+    "soDienThoai": "123",
+    "email": "test4",
+    "VaiTro": {
+      "id": 7,
+      "maVaiTro": "VT007",
+      "tenVaiTro": "Nhân viên kỹ thuật"
+    },
+    "dangHoatDong": true
   }
 ]

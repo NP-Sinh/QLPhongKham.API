@@ -36,6 +36,7 @@ namespace QLPhongKham.API.Services
                    SoDienThoai = x.SoDienThoai,
                    Email = x.Email,
                    IdVaiTro = x.IdVaiTro,
+                   TenVaiTro = x.IdVaiTroNavigation.TenVaiTro,
                    DangHoatDong = x.DangHoatDong,
                    NgayTao = x.NgayTao
 

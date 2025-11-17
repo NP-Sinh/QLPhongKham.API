@@ -31,13 +31,15 @@ namespace QLPhongKham.API.Services
                     Id = bs.Id,
                     MaBacSi = bs.MaBacSi,
                     IdNguoiDung = bs.IdNguoiDung,
+                    MaNguoiDung = bs.IdNguoiDungNavigation.MaNguoiDung,
                     HoTen = bs.HoTen,
                     NgaySinh = bs.NgaySinh,
                     GioiTinh = bs.GioiTinh,
                     SoDienThoai = bs.SoDienThoai,
                     IdChuyenKhoa = bs.IdChuyenKhoa,
+                    TenChuyenKhoa = bs.IdChuyenKhoaNavigation.TenChuyenKhoa,
                     BangCap = bs.BangCap,
-                    DangHoatDong = bs.DangHoatDong
+                    DangHoatDong = bs.DangHoatDong,                    
                 })
                 .ToListAsync();
             return query;
