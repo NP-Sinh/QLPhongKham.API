@@ -4,6 +4,7 @@ using Microsoft.IdentityModel.Tokens;
 using QLPhongKham.API.Models.Entities;
 using QLPhongKham.API.Models.Map;
 using QLPhongKham.API.Services;
+using QLPhongKham.API.Services.AuthServices;
 using QLPhongKham.API.Services.ConvertDBToJsonServices;
 using QLPhongKham.API.Services.MemoryCaching;
 using System.Text;
@@ -44,6 +45,8 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 
 
 // Add services to the container.
+builder.Services.AddScoped<JwtServices>();
+builder.Services.AddScoped<IAuthServices, AuthServices>();
 builder.Services.AddScoped<IConvertDBToJsonServices, ConvertDBToJsonServices>();
 builder.Services.AddScoped<IVaiTroServices, VaiTroServices>();
 builder.Services.AddScoped<IBenhNhanServices, BenhNhanServices>();
