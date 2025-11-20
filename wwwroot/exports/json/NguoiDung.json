@@ -37,7 +37,7 @@
     "VaiTro": {
       "id": 8,
       "maVaiTro": "VT008",
-      "tenVaiTro": "Test a"
+      "tenVaiTro": "Test aa"
     },
     "dangHoatDong": false
   },
@@ -79,7 +79,21 @@
     "VaiTro": {
       "id": 8,
       "maVaiTro": "VT008",
-      "tenVaiTro": "Test a"
+      "tenVaiTro": "Test aa"
+    },
+    "dangHoatDong": true
+  },
+  {
+    "id": 7,
+    "maNguoiDung": "ND000007",
+    "tenDangNhap": "BacSi1",
+    "hoTen": "BacSi1",
+    "soDienThoai": "123",
+    "email": "BacSi1@gmail.com",
+    "VaiTro": {
+      "id": 1,
+      "maVaiTro": "VT001",
+      "tenVaiTro": "Bác sĩ"
     },
     "dangHoatDong": true
   }

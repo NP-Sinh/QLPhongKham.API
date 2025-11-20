@@ -44,5 +44,51 @@
       "idChuyenKhoa": 1,
       "maChuyenKhoa": "CK000001"
     }
+  },
+  {
+    "id": 2,
+    "maPhieuKham": "PKB000002",
+    "ngayKham": "2025-11-18T00:00:00",
+    "trieuChung": "",
+    "canNang": null,
+    "chieuCao": null,
+    "nhietDo": null,
+    "huyetAp": "",
+    "nhipTim": null,
+    "chanDoan": "a",
+    "dieuTri": "",
+    "loiDan": "",
+    "ngayTaiKham": null,
+    "trangThai": "Hoàn thành",
+    "ghiChu": "",
+    "benhNhan": {
+      "id": 1,
+      "maBenhNhan": "BN000001",
+      "hoTen": "Nguyễn Văn A",
+      "ngaySinh": "1990-05-14",
+      "gioiTinh": "Nam",
+      "soDienThoai": "0901234567",
+      "diaChi": "123 Đường ABC, Quận 1, TP.HCM",
+      "cmnd": "123456789",
+      "nhomMau": "AB+",
+      "diUng": "Không"
+    },
+    "lichHen": {
+      "id": 1,
+      "maLichHen": "LH000001",
+      "idPhong": 1,
+      "maPhong": "PK000001",
+      "ngayGioHen": "2025-12-12T00:00:00",
+      "trieuChung": "Không có"
+    },
+    "bacSi": {
+      "id": 1,
+      "maBacSi": "BS000001",
+      "hoTen": "Nguyen Van Bac Si",
+      "ngaySinh": "1980-11-11",
+      "gioiTinh": "Nam",
+      "idChuyenKhoa": 1,
+      "maChuyenKhoa": "CK000001"
+    }
   }
 ]

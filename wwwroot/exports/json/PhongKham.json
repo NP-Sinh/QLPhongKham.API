@@ -5,5 +5,12 @@
     "TenPhong": "Phòng khám 1",
     "LoaiPhong": "Khám bệnh",
     "Tang": 1
+  },
+  {
+    "Id": 2,
+    "MaPhong": "PK000002",
+    "TenPhong": "Phòng khám 2",
+    "LoaiPhong": "Khám bệnh",
+    "Tang": 1
   }
 ]
