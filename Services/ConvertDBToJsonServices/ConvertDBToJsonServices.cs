@@ -17,6 +17,7 @@ namespace QLPhongKham.API.Services.ConvertDBToJsonServices
         Task convertLichHenToJson();
         Task convertPhieKhamBenhToJson();
         Task convertDonThuocToJson();
+        Task convertLichLamViecToJson();
         Task convertAllDBToJson();
     }
     public class ConvertDBToJsonServices : IConvertDBToJsonServices
@@ -347,6 +348,36 @@ namespace QLPhongKham.API.Services.ConvertDBToJsonServices
               .OrderBy(x => x.id)
               .ToListAsync();
             await SaveToJsonFile(data, "DonThuoc.json");
+        }
+
+        public async Task convertLichLamViecToJson()
+        {
+            var data = await _context.LichLamViecs
+              .Select(x => new
+              {
+                  id = x.Id,
+                  thuTrongTuan = x.ThuTrongTuan,
+                  gioBatDau = x.GioBatDau,
+                  gioKetThuc = x.GioKetThuc,
+                  soBNToiDa = x.SoBenhNhanToiDa,
+                  bacSi = x.IdBacSiNavigation != null ? new
+                  {
+                      idBacSi = x.IdBacSi,
+                      maBacSi = x.IdBacSiNavigation.MaBacSi,
+                      hoTen = x.IdBacSiNavigation.HoTen,
+                      chuyenKhoa = x.IdBacSiNavigation.IdChuyenKhoaNavigation.TenChuyenKhoa,
+                  } : null,
+                  phong = x.IdPhongNavigation != null ? new
+                  {
+                      idPhong = x.IdPhong,
+                      maPhong = x.IdPhongNavigation.MaPhong,
+                      tenPhong = x.IdPhongNavigation.TenPhong,
+                  } : null
+                  
+              })
+              .OrderBy(x => x.id)
+              .ToListAsync();
+            await SaveToJsonFile(data, "LichLamViec.json");
         }
     }
 }
